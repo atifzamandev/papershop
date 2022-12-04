@@ -1,5 +1,32 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "react-bootstrap": "^2.5.0"
+  },
+  "name": "papershop",
+  "version": "1.0.0",
+  "description": "MERN PaperShop Application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/index.js",
+    "server": "nodemon backend/index.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atifzamandev/papershop.git"
+  },
+  "author": "Atif Zaman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atifzamandev/papershop/issues"
+  },
+  "homepage": "https://github.com/atifzamandev/papershop#readme",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
   }
 }
