@@ -1,9 +1,14 @@
 import express from 'express'
+import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import connectDB from './Config/db.js'
 import products from './Data/products.js' 
 
 
 dotenv.config() 
+mongoose.set('strictQuery', true);
+connectDB()
+
 const app = express()
 
 app.get('/', (request, response)=>{
