@@ -17,7 +17,7 @@ import Message from "../../Components/Message/Message"
 import { listProductsDetails } from "../../Actions/ProductActions"
 
 const ProductPage = () => {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
 
   const dispatch = useDispatch()
   const productDetails = useSelector((state) => state.productDetails)
@@ -85,8 +85,7 @@ const ProductPage = () => {
                     <Row>
                       <Col>Quantity</Col>
                       <Col>
-                        <Form.Control
-                          as="select"
+                        <Form.Select
                           value={quantity}
                           onChange={(e) => setQuantity(e.target.value)}
                         >
@@ -95,7 +94,7 @@ const ProductPage = () => {
                               {x + 1}
                             </option>
                           ))}
-                        </Form.Control>
+                        </Form.Select>
                       </Col>
                     </Row>
                   </ListGroupItem>
