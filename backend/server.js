@@ -4,18 +4,20 @@ import dotenv from 'dotenv'
 import connectDB from './Config/db.js'
 import {notFound, errorHandler} from './Middleware/errorMiddleware.js'
 import ProductRoutes from './Routes/ProductRoutes.js'
-
+import UserRoutes from './Routes/UserRoutes.js'
 dotenv.config() 
 mongoose.set('strictQuery', true);
 connectDB()
 
 const app = express()
 
+app.use(express.json())
 app.get('/', (request, response)=>{
         response.send('API is running and working with ES Module..') 
 })
 
 app.use('/api/products', ProductRoutes)
+app.use('/api/users', UserRoutes)
 
 app.use(notFound)
 
